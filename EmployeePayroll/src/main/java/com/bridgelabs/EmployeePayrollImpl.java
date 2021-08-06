@@ -5,16 +5,36 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EmployeePayrollImpl {
+    public  enum IOService{
+        CONSOLE_IO, FILE_IO, REST_IO
+    };
 
-    private final List<EmployeePayrollData> employeePayrollDataList;
+    private List<EmployeePayrollData> employeePayrollDataList;
+
+
+
+    public EmployeePayrollImpl(List<EmployeePayrollData> employeePayrollList) {
+        this.employeePayrollDataList = employeePayrollList;
+    }
+
 
     public EmployeePayrollImpl() {
         this.employeePayrollDataList = new ArrayList<>();
     }
 
+    /**
+     * This method is used to count the entries.
+     */
+    public static long countEntries(IOService fileIO) {
+        if(fileIO.equals(IOService.FILE_IO)) {
+            return new EmployeePayrollFileIOService().countEntries();
+        }
+        return 0;
+    }
+
     /*
      Purpose: Method to take employee details from console.
-     *  and add those details to list.
+     *  and add those details to List.
      */
     public void readData() {
         Scanner sc = new Scanner(System.in);
@@ -29,10 +49,15 @@ public class EmployeePayrollImpl {
         employeePayrollDataList.add(new EmployeePayrollData(id, name, salary));
     }
 
-    /*
-    Purpose: Method to print employee details on console.
-    */
-    public void writeData() {
-        System.out.println(employeePayrollDataList);
+    /**
+     *  This method is used to write the employee payroll data.
+     */
+    public void writeData(IOService fileIO) {
+        if(fileIO.equals(IOService.CONSOLE_IO)) {
+            System.out.println(employeePayrollDataList);
+        }else if(fileIO.equals(IOService.FILE_IO)) {
+            new EmployeePayrollFileIOService().writeDataToFile(employeePayrollDataList);
+        }
     }
+
 }
