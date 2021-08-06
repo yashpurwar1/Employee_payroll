@@ -43,4 +43,14 @@ public class EmployeePayrollFileIOService {
         return entries;
     }
 
+    /**
+     * This method is used to read the data from file
+     */
+    public void printDataFromFile() {
+        try {
+            Files.lines(new File(PAYROLL_FILE_NAME).toPath()).forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

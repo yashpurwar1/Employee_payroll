@@ -5,12 +5,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EmployeePayrollImpl {
-    public  enum IOService{
+
+    public enum IOService {
         CONSOLE_IO, FILE_IO, REST_IO
-    };
+    }
+
+    ;
 
     private List<EmployeePayrollData> employeePayrollDataList;
-
 
 
     public EmployeePayrollImpl(List<EmployeePayrollData> employeePayrollList) {
@@ -26,10 +28,19 @@ public class EmployeePayrollImpl {
      * This method is used to count the entries.
      */
     public static long countEntries(IOService fileIO) {
-        if(fileIO.equals(IOService.FILE_IO)) {
+        if (fileIO.equals(IOService.FILE_IO)) {
             return new EmployeePayrollFileIOService().countEntries();
         }
         return 0;
+    }
+
+    /**
+     * This method is used to read the employee payroll data.
+     */
+    public static void printData(IOService fileIO) {
+        if (fileIO.equals(IOService.FILE_IO)) {
+            new EmployeePayrollFileIOService().printDataFromFile();
+        }
     }
 
     /*
@@ -50,12 +61,12 @@ public class EmployeePayrollImpl {
     }
 
     /**
-     *  This method is used to write the employee payroll data.
+     * This method is used to write the employee payroll data.
      */
     public void writeData(IOService fileIO) {
-        if(fileIO.equals(IOService.CONSOLE_IO)) {
+        if (fileIO.equals(IOService.CONSOLE_IO)) {
             System.out.println(employeePayrollDataList);
-        }else if(fileIO.equals(IOService.FILE_IO)) {
+        } else if (fileIO.equals(IOService.FILE_IO)) {
             new EmployeePayrollFileIOService().writeDataToFile(employeePayrollDataList);
         }
     }
