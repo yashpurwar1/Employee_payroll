@@ -43,6 +43,12 @@ public class EmployeePayrollImpl {
         }
     }
 
+    public void readDataFromFile(IOService fileIO) {
+        if(fileIO.equals(IOService.CONSOLE_IO)) {
+            new EmployeePayrollFileIOService().readDataFromFile();
+        }
+    }
+
     /*
      Purpose: Method to take employee details from console.
      *  and add those details to List.

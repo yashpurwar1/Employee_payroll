@@ -21,4 +21,13 @@ public class EmployeePayrollTest {
         System.out.println("Total number of entries are: "+entries);
         Assert.assertEquals(3, entries);
     }
+
+    @Test
+    public void givenFile_OnReadingFromFile_ShouldMatchEmployeeCount() {
+        EmployeePayrollImpl employeePayroll = new EmployeePayrollImpl();
+        employeePayroll.readDataFromFile(EmployeePayrollImpl.IOService.FILE_IO);
+        long entries = EmployeePayrollImpl.countEntries(EmployeePayrollImpl.IOService.FILE_IO);
+
+        Assert.assertEquals(3, entries);
+    }
 }
