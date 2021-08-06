@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabs.APITests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-06T18:14:26" hostname="DESKTOP-E4UM7PR" time="0.096">
+  <properties/>
+  <testcase name="givenPathWhen_CheckedThenConfirm" classname="com.bridgelabs.APITests" time="0.096"/>
+  <system-out><![CDATA[C:\Users\Yash\TempPlayGround\temp1
+C:\Users\Yash\TempPlayGround\temp2
+C:\Users\Yash\TempPlayGround\temp3
+C:\Users\Yash\TempPlayGround\temp4
+C:\Users\Yash\TempPlayGround\temp5
+C:\Users\Yash\TempPlayGround\temp6
+C:\Users\Yash\TempPlayGround\temp7
+C:\Users\Yash\TempPlayGround\temp8
+C:\Users\Yash\TempPlayGround\temp9
+C:\Users\Yash\TempPlayGround\temp1
+C:\Users\Yash\TempPlayGround\temp2
+C:\Users\Yash\TempPlayGround\temp3
+C:\Users\Yash\TempPlayGround\temp4
+C:\Users\Yash\TempPlayGround\temp5
+C:\Users\Yash\TempPlayGround\temp6
+C:\Users\Yash\TempPlayGround\temp7
+C:\Users\Yash\TempPlayGround\temp8
+C:\Users\Yash\TempPlayGround\temp9
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
